@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/btn.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/media.css') }}">
 </head>
     <header class="hero-section">
         <nav class="navbar navbar-expand-lg navbar-dark pt-4">
@@ -57,12 +58,12 @@
 
         <div class="container hero-content text-center text-white">
             <div class="position-relative">
-                <div class="brand-tag tag-1"><img src="{{ asset('assets/img/tag1.png') }}" alt="" width="20px"> Hero</div>
-                <div class="brand-tag tag-2"><img src="{{ asset('assets/img/tag2.png') }}" alt=""> Myntra</div>
-                <div class="brand-tag tag-3"><img src="{{ asset('assets/img/tag3.png') }}" alt=""> Tata</div>
-                <div class="brand-tag tag-4"><img src="{{ asset('assets/img/tag4.png') }}" alt=""> Lego</div>
-                <div class="brand-tag tag-5"><img src="{{ asset('assets/img/tag5.png') }}" alt=""> Adidas</div>
-                <div class="brand-tag tag-6"><img src="{{ asset('assets/img/tag6.png') }}" alt=""> H&M</div>
+                <div class="brand-tag tag-1"><img src="{{ asset('assets/img/tag1.png') }}" alt="" width="30px"> Hero</div>
+                <div class="brand-tag tag-2"><img src="{{ asset('assets/img/tag2.png') }}" alt="" width="30px"> Myntra</div>
+                <div class="brand-tag tag-3"><img src="{{ asset('assets/img/tag3.png') }}" alt="" width="30px"> Tata</div>
+                <div class="brand-tag tag-4"><img src="{{ asset('assets/img/tag4.png') }}" alt="" width="30px"> Lego</div>
+                <div class="brand-tag tag-5"><img src="{{ asset('assets/img/tag5.png') }}" alt="" width="30px"> Adidas</div>
+                <div class="brand-tag tag-6"><img src="{{ asset('assets/img/tag6.png') }}" alt="" width="30px"> H&M</div>
 
                 <h1 class="display-text mb-4">STAY AHEAD <br> IN SHIPPING AND LOGISTICS</h1>
                 <p class="lead-text mb-5 mx-auto" style="max-width: 600px;">
@@ -241,76 +242,62 @@
                             {{ session('success') }}
                         </div>
                     @endif
-                    <form action="{{ route('leads.store') }}" 
-      method="POST" 
-      enctype="multipart/form-data"
-      class="contact-form">
-
-    @csrf
-
-    <div class="row g-3">
-
-        <div class="col-md-6">
-            <input type="text" name="name" class="form-control"
-                   placeholder="Full Name"
-                   value="{{ old('name') }}">
-            @error('name')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-
-        <div class="col-md-6">
-            <input type="text" name="business_name" class="form-control"
-                   placeholder="Business Name"
-                   value="{{ old('business_name') }}">
-            @error('business_name')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-
-        <div class="col-md-6">
-            <input type="email" name="email" class="form-control"
-                   placeholder="Email Id"
-                   value="{{ old('email') }}">
-            @error('email')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-
-        <div class="col-md-6">
-            <input type="text" name="phone" class="form-control"
-                   placeholder="Phone Number"
-                   value="{{ old('phone') }}">
-            @error('phone')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-
-        <div class="col-12">
-            <input type="file" name="attachment" class="form-control">
-            @error('attachment')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-
-        <div class="col-12">
-            <textarea name="message" class="form-control"
-                      rows="4"
-                      placeholder="Your Message">{{ old('message') }}</textarea>
-            @error('message')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-
-        <div class="col-12">
-            <button type="submit" class="btn btn-success-custom px-5">
-                Submit
-            </button>
-        </div>
-
-    </div>
-</form>
-
+                    <form action="{{ route('leads.store') }}" method="POST" enctype="multipart/form-data" class="contact-form">
+                     @csrf
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" name="name" class="form-control"
+                                placeholder="Full Name"
+                                value="{{ old('name') }}">
+                            @error('name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="business_name" class="form-control"
+                                placeholder="Business Name"
+                                value="{{ old('business_name') }}">
+                            @error('business_name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" name="email" class="form-control"
+                                placeholder="Email Id"
+                                value="{{ old('email') }}">
+                            @error('email')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="phone" class="form-control"
+                                placeholder="Phone Number"
+                                value="{{ old('phone') }}">
+                            @error('phone')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="col-12">
+                            <input type="file" name="attachment" class="form-control">
+                            @error('attachment')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" class="form-control"
+                                    rows="4"
+                                    placeholder="Your Message">{{ old('message') }}</textarea>
+                            @error('message')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success-custom px-5">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
