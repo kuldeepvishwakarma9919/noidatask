@@ -1,0 +1,576 @@
+body {
+     font-family: 'Montserrat', sans-serif !important;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+     background: linear-gradient(#00000099, rgba(0, 0, 0, 0.6)),
+                url("../img/hero.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100 vh;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+.bg-dark-glass .nav-item.active, 
+.bg-dark-glass .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px; 
+    color: #ffffff !important;
+}
+.bg-dark-glass .nav-item {
+    padding: 2px 20px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    transition: all 0.3s ease;
+    border: 1px solid transparent; 
+    margin: 0 2px;
+}
+
+
+
+/* Get Start Btn */
+.get_start_btn {
+  background: rgba(255, 255, 255, 0.08); 
+  color: #ffffff;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 8px 8px 24px !important; 
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.get_start_btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.arrow-circle {
+  width: 40px;
+  height: 40px;
+  background: #7c7fed; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  margin-left: 15px;
+}
+
+.get_start_btn:hover .arrow-circle {
+  transform: scale(1.05);
+}
+
+.arrow-circle i {
+  font-size: 18px;
+  color: white;
+}
+
+.btn-blue-gradient {
+    background: linear-gradient(90deg, #5c72ff 0%, #8c9eff 100%);
+    border: none;
+    color: white;
+}
+
+
+
+
+.hero-content {
+    margin-top: 100px;
+}
+
+.hero-content .display-text{
+    font-size: 66px;
+}
+
+
+.hero-content .lead-text{
+    font-size: 24px;
+}
+h1 {
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+/* Floating Tags Styling */
+.brand-tag {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1;
+}
+
+.brand-tag img {
+    border-radius: 50%;
+    margin-right: 8px;
+    background: white;
+}
+
+.tag-1 { 
+    top: 8%; left: 25%; 
+}
+.tag-2 {
+    bottom: 50%;
+    left: 7%;
+}
+.tag-3 { 
+    bottom: 40%; left: 5%;
+ }
+.tag-4 { 
+    bottom: 39%;
+    left: 16%; 
+}
+.tag-5 {
+     bottom: 45%;
+     right: 15%; 
+}
+.tag-6 {
+     top: 8%;
+    right: 10%;
+}
+
+@media (max-width: 768px) {
+    .brand-tag {
+        display: none; 
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content {
+        margin-top: 50px;
+    }
+}
+
+
+
+
+.bg-glass {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 20px;
+}
+
+.btn-blue-grad {
+    background: linear-gradient(90deg, #5b79e1, #8498f3);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+}
+
+.btn-outline-glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 25px;
+}
+
+/* Card Styling */
+.testimonial-card {
+    background-color: var(--card-bg);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    max-width: 500px;
+    margin-left: auto;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Slider Track */
+.slider-track {
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+.slider-thumb {
+    width: 40px;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .testimonial-card {
+        margin: 0 auto;
+    }
+    .slider-track {
+        margin: 20px auto;
+    }
+}
+
+
+
+
+.badge-custom { background: #f0f2f5; padding: 6px 15px; border-radius: 50px; font-size: 14px; }
+.badge-custom-dark { background: rgba(255,255,255,0.1); padding: 6px 15px; border-radius: 50px; font-size: 14px; color: #fff; }
+.btn-blue-grad { background: linear-gradient(90deg, #5c74e7, #8195f3); border: none; color: white; }
+.btn-outline-light-custom { border: 1px solid #ddd; color: #333; }
+.btn-outline-dark-custom { border: 1px solid rgba(255,255,255,0.2); color: white; background: rgba(255,255,255,0.05); }
+
+/* Section 1 Styling */
+.tracking-section { 
+    background: #fff;
+    height: 825px;
+ }
+.text-navy { color: var(--navy); }
+.main-img { border-radius: 30px; }
+.glass-card-stats {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    width: 220px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+.testimonial-section { 
+    background-color: #131735; 
+    color: white; overflow: hidden; 
+}
+.testimonial-card {
+    background: #1a1f3d;
+    border-radius: 25px;
+    padding: 30px;
+    min-width: 450px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.avatar { width: 50px; height: 50px; border-radius: 50%; }
+.user-info { display: flex; align-items: center; }
+.indicator-bar { width: 100px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+.indicator-active { width: 40px; height: 100%; background: #fff; border-radius: 10px; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .testimonial-card { min-width: 100%; }
+    .display-4 { font-size: 2.5rem; }
+}
+
+
+
+
+
+/* Badges & Buttons */
+.custom-badge-light { background: #f0f2f5; padding: 6px 16px; border-radius: 50px; font-size: 14px; }
+.custom-badge-dark { background: var(--glass); padding: 6px 16px; border-radius: 50px; font-size: 14px; color: white; border: 1px solid rgba(255,255,255,0.1); }
+.btn-primary-custom { background: var(--primary-blue); color: white; border-radius: 50px; padding: 10px 25px; border: none; }
+.btn-outline-custom { border: 1px solid #ddd; color: #333; border-radius: 50px; padding: 10px 25px; }
+.btn-outline-glass { border: 1px solid rgba(255,255,255,0.2); color: white; background: var(--glass); border-radius: 50px; padding: 10px 25px; }
+.btn-success-custom { background: #6db33f; color: white; border-radius: 8px; padding: 10px 40px; border: none; }
+
+/* Section 1 Overlay */
+.glass-overlay-card {
+    position: absolute; bottom: 20px; right: 20px;
+    background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);
+    padding: 20px; border-radius: 20px; color: white; border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Section 2 Cards */
+.testimonial-card {
+    background: #161b33; padding: 30px; border-radius: 25px;
+    min-width: 400px; border: 1px solid rgba(255,255,255,0.05);
+}
+.progress-bar-container { width: 150px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-left: auto; }
+.progress-bar-active { width: 60px; height: 100%; background: white; border-radius: 10px; }
+
+/* Section 3 Form */
+.form-control {
+    background: #161b33; border: 1px solid rgba(255,255,255,0.2);
+    color: white; border-radius: 10px; padding: 12px;
+}
+.form-control::placeholder { color: rgba(255,255,255,0.5); }
+.form-control:focus { background: #1a203d; color: white; box-shadow: none; border-color: var(--primary-blue); }
+
+
+
+
+
+
+/* Badges & Buttons */
+.badge-pill-light { background: #f1f3f6; padding: 6px 18px; border-radius: 50px; font-size: 14px; }
+.badge-pill-dark { background: var(--glass); padding: 6px 18px; border-radius: 50px; font-size: 14px; border: 1px solid rgba(255,255,255,0.1); }
+.btn-blue-pill { background: var(--primary-blue); color: white; border-radius: 50px; padding: 12px 30px; border: none; font-weight: 600; }
+.btn-outline-pill { border: 1px solid #ddd; border-radius: 50px; padding: 12px 30px; color: #333; }
+.btn-outline-pill-white { border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 12px 30px; color: white; background: var(--glass); }
+.btn-green-submit { background: var(--green-submit); color: white; border-radius: 8px; padding: 12px 45px; border: none; }
+
+/* Tracking Glass Card */
+.glass-card-tracking {
+    position: absolute; bottom: 30px; right: 20px;
+    background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(15px);
+    padding: 20px; border-radius: 20px; color: white; border: 1px solid rgba(255,255,255,0.3); width: 250px;
+}
+
+/* Testimonial Card */
+.testimonial-card-main {
+    background: #161b33; padding: 40px; border-radius: 30px;
+    min-width: 500px; border: 1px solid rgba(255,255,255,0.05);
+}
+.avatar-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.slider-indicator-track { width: 120px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+.slider-thumb { width: 50px; height: 100%; background: white; border-radius: 10px; }
+
+/* Map & Form */
+.map-placeholder {
+    height: 350px; background: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Map_of_India.png');
+    background-size: cover; background-position: center; position: relative;
+}
+.map-label {
+    position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+    background: #5c74e7; color: white; padding: 10px 20px; border-radius: 10px; font-weight: bold;
+}
+.contact-form .form-control {
+    background: #161b33; border: 1px solid rgba(255,255,255,0.1); color: white; padding: 12px;
+}
+.contact-form .form-control::placeholder { color: #888; }
+
+/* Footer */
+.social-icons i { margin-left: 15px; color: #333; font-size: 18px; }
+.subscribe-box {
+    background: #f8f9fa; border: 1px solid #eee; border-radius: 50px;
+    padding: 5px; display: flex; justify-content: space-between;
+}
+.subscribe-box input { border: none; background: transparent; padding-left: 15px; outline: none; width: 70%; }
+.subscribe-box button { background: var(--primary-blue); color: white; border: none; border-radius: 50px; padding: 8px 25px; }
+.list-unstyled li { margin-bottom: 10px; color: #666; cursor: pointer; }
+
+
+.contact-section {
+    background-color: #131735 !important;
+    padding: 30px;
+    height: 620px;
+}
+
+.contact-section iframe{
+    border-radius: 20px;
+}
+
+.contact-section input, textarea{
+   box-shadow: none !important;
+    border: 1px solid white !important;
+}
+
+
+:root {
+    --navy: #1a233a;
+    --primary-blue: #6c7fd8;
+    --light-bg: #f8f9fa;
+}
+
+.tracking-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+/* Typography */
+.badge-custom {
+    background: #f1f3f5;
+    color: #666;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.text-navy {
+    color: var(--navy);
+    line-height: 1.2;
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 500px;
+}
+
+/* Button Styling */
+.btn-custom-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 10px 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-solid-blue {
+    background-color: var(--primary-blue);
+    color: white !important;
+}
+
+.btn-glass-dark {
+    background-color: #f8f9fa;
+    color: #333 !important;
+    border: 1px solid #eee;
+}
+
+.icon-circle {
+    background: rgba(255, 255, 255, 0.2);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.btn-glass-dark .icon-circle {
+    background: #eee;
+}
+
+/* Image & Glass Card */
+.image-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.main-img {
+    border-radius: 30px;
+    object-fit: cover;
+    display: block;
+}
+
+.glass-card-stats {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    background: rgba(0, 0, 0, 0.3); /* Dark glass effect as per image */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.chart-placeholder {
+    width: 100px;
+    height: 50px;
+    opacity: 0.8;
+}
+
+
+/* Container for the relative positioning */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px; /* Image size adjust karein */
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.main-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+}
+
+/* The Glass Card Styling */
+.glass-overlay-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    backdrop-filter: blur(20px); /* Blur effect for glass look */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 24px;
+    padding: 25px;
+    color: #ffffff;
+}
+
+.card-header-text {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.9;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.card-body-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.stats-group {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.stat-percentage {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.graph-svg {
+    width: 110px;
+    margin-bottom: 5px;
+}
