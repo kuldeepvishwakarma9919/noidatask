@@ -18,7 +18,7 @@
                 <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ route('home.index') }}">
                     <span class="logo-icon me-2">❖</span> ShipX
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler box-shadow-none outline-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
               <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -242,7 +242,7 @@
                             {{ session('success') }}
                         </div>
                     @endif
-                    <form action="{{ route('leads.store') }}" method="POST" enctype="multipart/form-data" class="contact-form">
+                    <form action="{{ route('admin.leads.store') }}" method="POST" enctype="multipart/form-data" class="contact-form">
                      @csrf
                     <div class="row g-3">
                         <div class="col-md-6">

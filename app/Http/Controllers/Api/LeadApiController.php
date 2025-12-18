@@ -65,6 +65,7 @@ class LeadApiController extends Controller
     }
     public function update(Request $request, $id)
     {
+
         $lead = Lead::find($id);
         if (!$lead) {
             return response()->json(['status'=>false,'message'=>'Lead not found'],404);

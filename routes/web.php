@@ -8,8 +8,8 @@ use App\Http\Controllers\LeadController;
 // });
 
 Route::get('/', [SiteController::class, 'index'])->name('home.index'); 
-Route::post('/leads/store', [SiteController::class, 'formSubmit'])->name('leads.store'); 
+Route::post('/leads/store', [SiteController::class, 'formSubmit'])->name('admin.leads.store'); 
 Route::get('/admin/dashboard', [SiteController::class, 'dashboard'])->name('dashboard'); 
-Route::resource('leads', LeadController::class);
+Route::resource('leads', LeadController::class)->names('admin.leads');
 
 

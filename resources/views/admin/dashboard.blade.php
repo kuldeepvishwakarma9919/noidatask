@@ -119,13 +119,17 @@
         <div class="d-flex justify-content-between align-items-center mb-5">
             <div>
                 <h2 style="font-weight: 700;">Leads Overview</h2>
-                <p class="text-muted m-0">Manage and edit your business leads below.</p>
             </div>
         </div>
 
         <div class="table-container">
-            <div class="p-4 border-bottom">
+            <div class="p-4 border-bottom d-flex justify-content-between">
                 <h5 class="m-0">Recent Leads</h5>
+                <a href="#" class="btn  btn-white"
+                data-bs-toggle="modal"
+                data-bs-target="#createLeadModal">
+                + Create
+                </a>
             </div>
             <table>
                 <thead>
@@ -150,7 +154,7 @@
                                     Edit <span class="icon-circle">✎</span>
                                 </a>
 
-                                <form action="{{ route('leads.destroy', $lead->id) }}" method="POST" style="display:inline;">
+                                <form action="{{ route('admin.leads.destroy', $lead->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-custom-pill btn-delete" onclick="return confirm('Are you sure?')">
@@ -169,77 +173,76 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                   <form action="{{ route('leads.update', $lead->id) }}"
-      method="POST"
-      enctype="multipart/form-data">
-    @csrf
-    @method('PUT')
+                                   <form action="{{ route('admin.leads.update', $lead->id) }}"
+                                        method="POST"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PUT')
 
-    <div class="mb-3">
-        <label class="form-label small fw-bold">Full Name</label>
-        <input type="text" name="name" class="form-control"
-               value="{{ old('name', $lead->name) }}">
-        @error('name')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
-    </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small fw-bold">Full Name</label>
+                                            <input type="text" name="name" class="form-control"
+                                                value="{{ old('name', $lead->name) }}">
+                                            @error('name')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
 
-    <div class="mb-3">
-        <label class="form-label small fw-bold">Business Name</label>
-        <input type="text" name="business_name" class="form-control"
-               value="{{ old('business_name', $lead->business_name) }}">
-        @error('business_name')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
-    </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small fw-bold">Business Name</label>
+                                            <input type="text" name="business_name" class="form-control"
+                                                value="{{ old('business_name', $lead->business_name) }}">
+                                            @error('business_name')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
 
-    <div class="mb-3">
-        <label class="form-label small fw-bold">Email</label>
-        <input type="email" name="email" class="form-control"
-               value="{{ old('email', $lead->email) }}">
-        @error('email')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
-    </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small fw-bold">Email</label>
+                                            <input type="email" name="email" class="form-control"
+                                                value="{{ old('email', $lead->email) }}">
+                                            @error('email')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
 
-    <div class="mb-3">
-        <label class="form-label small fw-bold">Phone</label>
-        <input type="text" name="phone" class="form-control"
-               value="{{ old('phone', $lead->phone) }}">
-        @error('phone')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
-    </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small fw-bold">Phone</label>
+                                            <input type="text" name="phone" class="form-control"
+                                                value="{{ old('phone', $lead->phone) }}">
+                                            @error('phone')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
 
-    <div class="mb-3">
-        <label class="form-label small fw-bold">Attachment</label>
-        <input type="file" name="attachment" class="form-control">
-        @error('attachment')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
+                                        <div class="mb-3">
+                                            <label class="form-label small fw-bold">Attachment</label>
+                                            <input type="file" name="attachment" class="form-control">
+                                            @error('attachment')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
 
-        @if($lead->attachment)
-            <small class="text-muted d-block mt-1">
-                Current file: {{ $lead->attachment }}
-            </small>
-        @endif
-    </div>
+                                            @if($lead->attachment)
+                                                <small class="text-muted d-block mt-1">
+                                                    Current file: {{ $lead->attachment }}
+                                                </small>
+                                            @endif
+                                        </div>
 
-    <div class="mb-3">
-        <label class="form-label small fw-bold">Message</label>
-        <textarea name="message" class="form-control" rows="3">{{ old('message', $lead->message) }}</textarea>
-        @error('message')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
-    </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small fw-bold">Message</label>
+                                            <textarea name="message" class="form-control" rows="3">{{ old('message', $lead->message) }}</textarea>
+                                            @error('message')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
 
-    <button type="submit"
-            class="btn w-100 py-3 mt-2"
-            style="background: var(--primary-blue); color: white; border-radius: 12px; font-weight: 600;">
-        Update Details
-    </button>
-</form>
-
+                                        <button type="submit"
+                                                class="btn w-100 py-3 mt-2"
+                                                style="background: var(--primary-blue); color: white; border-radius: 12px; font-weight: 600;">
+                                            Update Details
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -249,6 +252,68 @@
             </table>
         </div>
     </div>
+
+
+    <!-- CREATE LEAD MODAL -->
+<div class="modal fade" id="createLeadModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold">Create New Lead</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="{{ route('admin.leads.store') }}"
+                      method="POST"
+                      enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Full Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Business Name</label>
+                        <input type="text" name="business_name" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Phone</label>
+                        <input type="text" name="phone" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Attachment</label>
+                        <input type="file" name="attachment" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Message</label>
+                        <textarea name="message" class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="btn w-100 py-3"
+                            style="background: var(--primary-blue); color: #fff; border-radius: 12px;">
+                        Create Lead
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

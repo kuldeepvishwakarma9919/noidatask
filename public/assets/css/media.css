@@ -124,10 +124,25 @@
 
 
 }
+@media (max-width: 667px) {
+        .testimonial-section .btn-custom-pill {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 50px;
+        padding: 2px 2px 2px 8px !important;
+        font-weight: 400;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        color: white !important;
+    }
 
 
-
-@media (max-width: 375px) {
-
+        .contact-form .form-control {
+        background: #161b33;
+        border: 0.5px solid rgba(255, 255, 255, 0.1) !important;
+        color: white;
+        padding: 6px;
+    }
 
 }
